@@ -24,9 +24,16 @@ export class TarefaController{
     }
     @Put()
     @HttpCode(HttpStatus.OK)
-    create(@Body()tarefa: Tarefa): Promise<Tarefa>{
+    update(@Body()tarefa: Tarefa): Promise<Tarefa>{
         return this.service.update(tarefa)
     }
+
+    @Post()
+    @HttpCode(HttpStatus.CREATED)
+    create(@Body() tarefa: Tarefa): Promise<Tarefa>{
+        return this.service.create(tarefa)
+    }
+
     @Delete('/:id')
     @HttpCode(HttpStatus.NO_CONTENT)
     delete(@Param('id',ParseIntPipe)id: number){
