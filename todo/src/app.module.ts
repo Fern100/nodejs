@@ -12,7 +12,7 @@ import { Tarefa } from './tarefa/entities/tarefa.entities';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'Lar2401$',
+      password: 'root',
       database: 'db_todo',
       entities:[Tarefa, categoria],
       synchronize: true 
